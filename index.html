@@ -6,10 +6,10 @@
     <title>Grimoire.ts</title>
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/page.css" />
   </head>
   <body>
     <header>
+      <!--- Navigation Bar --->
       <h1>✦ Grimoire.ts ✦</h1>
       <p class="subtitle">
         A digital grimoire for plants, spells, and quiet study
@@ -24,6 +24,7 @@
     </header>
 
     <main>
+      <!--- Home Page --->
       <section id="home" class="page active">
         <h2>Welcome</h2>
         <p>
@@ -31,7 +32,7 @@
           plants, intentions, and small rituals, written with care.
         </p>
       </section>
-
+      <!--- Plants Page --->
       <section id="plants" class="page">
         <h2>Plants</h2>
         <p>
@@ -39,8 +40,15 @@
           traditional lore with personal notes.
         </p>
         <br />
+        <div class="filters">
+          <button data-element="All" class="filter active">All</button>
+          <button data-element="Air" class="filter">🌪️ Air</button>
+          <button data-element="Fire" class="filter">🔥 Fire</button>
+          <button data-element="Water" class="filter">🌊 Water</button>
+          <button data-element="Earth" class="filter">🌱 Earth</button>
+        </div>
       </section>
-
+      <!--- Spells Page --->
       <section id="spells" class="page">
         <h2>Spells</h2>
         <p>
@@ -48,8 +56,11 @@
           and study.
         </p>
         <br />
+        <div class="search">
+          <input type="text" id="spellSearch" placeholder="Search spells..." />
+        </div>
       </section>
-
+      <!--- About Page --->
       <section id="about" class="page">
         <h2>About</h2>
         <p>

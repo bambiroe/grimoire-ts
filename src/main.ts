@@ -1,8 +1,8 @@
 // src/main.ts
-import { plants } from "./data/plants.js";
-import { spells } from "./data/spells.js";
+import { renderPlants } from "./utils/plants.js";
+import { renderSpells } from "./utils/spells.js";
 
-// Show/Hide Pages
+// ------ Show/Hide Pages ------
 const pages = document.querySelectorAll<HTMLElement>(".page");
 const buttons = document.querySelectorAll<HTMLElement>("nav a");
 
@@ -16,70 +16,29 @@ buttons.forEach((button) => {
   });
 });
 
-// Elements
-const elementIcons: Record<string, string> = {
-  Air: "🌪️",
-  Fire: "🔥",
-  Water: "🌊",
-  Earth: "🌱"
-};
+// ------ Plant Filtering ------
+const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter");
 
-// Import plants
-const plantsSection = document.getElementById("plants");
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const element = button.dataset.element || "All";
 
-if (plantsSection) {
-  const list = document.createElement("ul");
+    filterButtons.forEach((b) =>
+      b.classList.toggle("active", b === button)
+    );
 
-  plants.forEach((plant) => {
-    const item = document.createElement("li");
-    item.classList.add("card");
-
-    item.innerHTML = `
-      <img
-        src="${plant.image}"
-        alt="${plant.name}"
-        class="card-image"
-      />
-      <div class="card-content">
-        <strong>${plant.name}</strong><br />
-        <em>Element:</em> ${elementIcons[plant.element]} ${plant.element}<br />
-        <em>Uses:</em> ${plant.uses.join(", ")}<br />
-        <span>${plant.notes}</span>
-      </div>
-    `;
-
-    list.appendChild(item);
+    renderPlants(element);
   });
+});
 
-  plantsSection.appendChild(list);
-}
+renderPlants("All");
 
-// Import Spells
-const spellsSection = document.getElementById("spells");
+// ------ Spell Search ------
+const spellSearchInput = document.getElementById("spellSearch") as HTMLInputElement;
 
-if (spellsSection) {
-  const list = document.createElement("ul");
+spellSearchInput.addEventListener("input", (e) => {
+  const query = (e.target as HTMLInputElement).value.toLowerCase();
+  renderSpells(query);
+});
 
-  spells.forEach((spell) => {
-    const item = document.createElement("li");
-    item.classList.add("card");
-
-    item.innerHTML = `
-      <img
-        src="${spell.image}"
-        alt="${spell.name}"
-        class="card-image"
-      />
-      <div class="card-content">
-        <strong>${spell.name}</strong><br />
-        <em>Intent:</em> ${spell.intent}<br />
-        <em>Focus:</em> ${spell.focus}<br />
-        <span>${spell.notes}</span>
-      </div>
-    `;
-
-    list.appendChild(item);
-  });
-
-  spellsSection.appendChild(list);
-}
+renderSpells("");

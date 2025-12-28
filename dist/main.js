@@ -1,7 +1,7 @@
 // src/main.ts
-import { plants } from "./data/plants.js";
-import { spells } from "./data/spells.js";
-// Show/Hide Pages
+import { renderPlants } from "./utils/plants.js";
+import { renderSpells } from "./utils/spells.js";
+// ------ Show/Hide Pages ------
 const pages = document.querySelectorAll(".page");
 const buttons = document.querySelectorAll("nav a");
 buttons.forEach((button) => {
@@ -12,58 +12,20 @@ buttons.forEach((button) => {
         });
     });
 });
-// Elements
-const elementIcons = {
-    Air: "🌪️",
-    Fire: "🔥",
-    Water: "🌊",
-    Earth: "🌱"
-};
-// Import plants
-const plantsSection = document.getElementById("plants");
-if (plantsSection) {
-    const list = document.createElement("ul");
-    plants.forEach((plant) => {
-        const item = document.createElement("li");
-        item.classList.add("card");
-        item.innerHTML = `
-      <img
-        src="${plant.image}"
-        alt="${plant.name}"
-        class="card-image"
-      />
-      <div class="card-content">
-        <strong>${plant.name}</strong><br />
-        <em>Element:</em> ${elementIcons[plant.element]} ${plant.element}<br />
-        <em>Uses:</em> ${plant.uses.join(", ")}<br />
-        <span>${plant.notes}</span>
-      </div>
-    `;
-        list.appendChild(item);
+// ------ Plant Filtering ------
+const filterButtons = document.querySelectorAll(".filter");
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const element = button.dataset.element || "All";
+        filterButtons.forEach((b) => b.classList.toggle("active", b === button));
+        renderPlants(element);
     });
-    plantsSection.appendChild(list);
-}
-// Import Spells
-const spellsSection = document.getElementById("spells");
-if (spellsSection) {
-    const list = document.createElement("ul");
-    spells.forEach((spell) => {
-        const item = document.createElement("li");
-        item.classList.add("card");
-        item.innerHTML = `
-      <img
-        src="${spell.image}"
-        alt="${spell.name}"
-        class="card-image"
-      />
-      <div class="card-content">
-        <strong>${spell.name}</strong><br />
-        <em>Intent:</em> ${spell.intent}<br />
-        <em>Focus:</em> ${spell.focus}<br />
-        <span>${spell.notes}</span>
-      </div>
-    `;
-        list.appendChild(item);
-    });
-    spellsSection.appendChild(list);
-}
+});
+renderPlants("All");
+// ------ Spell Search ------
+const spellSearchInput = document.getElementById("spellSearch");
+spellSearchInput.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase();
+    renderSpells(query);
+});
+renderSpells("");

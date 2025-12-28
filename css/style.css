@@ -12,7 +12,6 @@ body {
   line-height: 1.6;
 }
 
-/* Layout */
 header {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -31,13 +30,17 @@ nav {
 
 nav a {
   margin: 0 0.75rem;
-  text-decoration: none;
-  color: #b8d8c0;
   font-size: 0.9rem;
 }
 
-nav a:hover {
+a {
+  text-decoration: none;
+  color: #b8d8c0;
+}
+
+a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 main {
@@ -74,10 +77,13 @@ li {
   border-bottom: 1px solid #2f3633;
 }
 
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
+/* Source: posted by Blowsie, modified by community. */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

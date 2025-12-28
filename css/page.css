@@ -7,6 +7,10 @@
   display: block;
 }
 
+.bullet {
+  color: var(--lnk);
+}
+
 .card {
   display: flex;
   gap: 1rem;

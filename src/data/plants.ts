@@ -10,31 +10,31 @@ export const plants: Plant[] = [
   {
     name: "Chamomile",
     element: "Water",
-    uses: ["Calm", "Rest", "Gentleness"],
+    uses: ["Rest", "Focus", "Purification"],
     notes:
-      "Associated with soothing emotions and gentle healing, commonly used in calming rituals.",
+      "Provides aid by soothing emotions and healing the mind, commonly used in calming rituals.",
     image: "assets/plants/chamomile.png"
   },
   {
     name: "Cinnamon",
     element: "Fire",
-    uses: ["Energy", "Motivation", "Protection"],
+    uses: ["Abundance", "Power", "Success"],
     notes:
-      "Strongly associated with vitality and momentum, often used to energize intentions.",
+      "Strongly associated with vitality and protection, often used to energise intentions.",
     image: "assets/plants/cinnamon.png"
   },
   {
-    name: "Laurel (Bay)",
+    name: "Bay Laurel",
     element: "Fire",
     uses: ["Success", "Insight", "Protection"],
     notes:
-      "Historically associated with victory and achievement. Often used symbolically for confidence and protection.",
+      "Historically associated with victory and achievement. Recommended for boosting confidence and fuelling good wishes.",
     image: "assets/plants/laurel.png"
   },
   {
     name: "Lavender",
     element: "Air",
-    uses: ["Calm", "Sleep", "Peace"],
+    uses: ["Calm", "Sleep", "Protection"],
     notes:
       "Associated with relaxation and mental clarity. Commonly used to quiet the mind and support rest.",
     image: "assets/plants/lavender.png"
@@ -42,33 +42,57 @@ export const plants: Plant[] = [
   {
     name: "Rose",
     element: "Water",
-    uses: ["Love", "Healing", "Emotional balance"],
+    uses: ["Love", "Beauty", "Emotional Balance"],
     notes:
       "Closely linked to emotional work and compassion. Often used in practices centered on the heart.",
     image: "assets/plants/rose.png"
   },
   {
     name: "Sage",
-    element: "Earth",
-    uses: ["Cleansing", "Wisdom", "Grounding"],
+    element: "Air",
+    uses: ["Cleansing", "Wisdom", "Solace"],
     notes:
-      "Widely used in grounding and cleansing practices, symbolizing stability and wisdom.",
+      "Widely used in grounding and cleansing practices, symbolising stability and wisdom.",
     image: "assets/plants/sage.png"
   },
   {
     name: "Stinging Nettle",
     element: "Earth",
-    uses: ["Strength", "Boundaries", "Renewal"],
+    uses: ["Vitality", "Boundaries", "Growth"],
     notes:
-      "Associated with resilience and firm boundaries, often symbolizing protection through strength.",
+      "Associated with inner growth and firm boundaries, and is believed to strengthen the body.",
     image: "assets/plants/nettle.png"
   },
   {
     name: "Thyme",
     element: "Air",
-    uses: ["Courage", "Clarity", "Vitality"],
+    uses: ["Loyalty", "Spirit", "Clarity"],
     notes:
       "Traditionally linked to courage and clear thinking, often used to strengthen focus.",
     image: "assets/plants/thyme.png"
+  },
+  {
+    name: "Aloe Vera",
+    element: "Water",
+    uses: ["Beauty", "Healing", "Luck"],
+    notes:
+      "Known for soothing burns and can often be used in moon-related spells.",
+    image: "assets/plants/aloe.png"
+  },
+  {
+    name: "Basil",
+    element: "Fire",
+    uses: ["Fidelity", "Forgiveness", "Wealth"],
+    notes:
+      "Revered for its divine essence. Basil tea is traditionally made to invite love into one’s life.",
+    image: "assets/plants/basil.png"
+  },
+  {
+    name: "Vervain",
+    element: "Earth",
+    uses: ["Protection", "Creativity", "Prosperity"],
+    notes:
+      "Linked to cleansing and vivid dreams. Often used for spiritual protection.",
+    image: "assets/plants/vervain.png"
   }
 ];

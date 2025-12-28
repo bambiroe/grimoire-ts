@@ -59,7 +59,7 @@ export const plants = [
         name: "Aloe Vera",
         element: "Water",
         uses: ["Beauty", "Healing", "Luck"],
-        notes: "Known for soothing burns and can be often used in Moon spells.",
+        notes: "Known for soothing burns and can also be used in moon-related spells.",
         image: "assets/plants/aloe.png"
     },
     {

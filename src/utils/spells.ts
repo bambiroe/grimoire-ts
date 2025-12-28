@@ -14,7 +14,11 @@ export function renderSpells(query: string) {
 
   spellsList.innerHTML = "";
 
-  const filteredSpells = spells.filter((spell) =>
+  const sortedSpells = [...spells].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
+  const filteredSpells = sortedSpells.filter((spell) =>
     spell.name.toLowerCase().includes(query)
   );
 

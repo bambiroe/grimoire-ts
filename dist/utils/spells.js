@@ -10,7 +10,8 @@ export function renderSpells(query) {
         spellsSection.appendChild(spellsList);
     }
     spellsList.innerHTML = "";
-    const filteredSpells = spells.filter((spell) => spell.name.toLowerCase().includes(query));
+    const sortedSpells = [...spells].sort((a, b) => a.name.localeCompare(b.name));
+    const filteredSpells = sortedSpells.filter((spell) => spell.name.toLowerCase().includes(query));
     filteredSpells.forEach((spell) => {
         const item = document.createElement("li");
         item.classList.add("card");

@@ -33,5 +33,12 @@ export const spells = [
         focus: "Environment",
         notes: "A reflective practice focused on refreshing a space through scent, airflow, or mindful attention.",
         image: "assets/spells/cleansing.png",
+    },
+    {
+        name: "Good Luck Charm",
+        intent: "Fortune and opportunity",
+        focus: "Symbolic intention",
+        notes: "A small object prepared with focused intention, carried or placed nearby to encourage confidence and openness to opportunity.",
+        image: "assets/spells/luck.png",
     }
 ];

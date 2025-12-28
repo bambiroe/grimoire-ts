@@ -1,0 +1,25 @@
+{
+  "name": "grimoire-ts",
+  "version": "1.0.0",
+  "description": "A digital grimoire for plants, spells, and quiet study.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bambiroe/grimoire-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bambiroe/grimoire-ts/issues"
+  },
+  "homepage": "https://github.com/bambiroe/grimoire-ts#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -2,6 +2,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 @import url("page.css");
 
+:root, [data-theme='dark'] {
+  --bg: #1b1f1c;
+  --brdr: #2f3633;
+  --txt: #e6e6e6;
+  --lnk: #afe1af;
+  --ttl2: #ebf5e4;
+}
+
+[data-theme='light'] {
+  --bg: #fcf5e5;
+  --brdr: #dfd5be;
+  --txt: #1b1f1c;
+  --lnk: #2e8b57;
+  --ttl2: #587a5c;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,15 +26,31 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #1b1f1c;
-  color: #e6e6e6;
+  background-color: var(--bg);
+  color: var(--txt);
   line-height: 1.6;
 }
 
 header {
   text-align: center;
   padding: 2.5rem 1rem;
-  border-bottom: 1px solid #2f3633;
+  border-bottom: 1px solid var(--brdr);
+}
+
+#themeToggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--txt);
+}
+
+#themeToggle:hover {
+  opacity: 0.7;
 }
 
 .subtitle {
@@ -38,7 +70,7 @@ nav a {
 
 a {
   text-decoration: none;
-  color: #b8d8c0;
+  color: var(--lnk);
 }
 
 a:hover {
@@ -64,14 +96,14 @@ h2 {
   margin-bottom: 0.75rem;
   letter-spacing: 0.03em;
   font-size: 1.2rem;
-  color: #cfe8d6;
+  color: var(--ttl2);
 }
 
 footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.8rem;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 ul {
@@ -82,7 +114,7 @@ ul {
 li {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #2f3633;
+  border-bottom: 1px solid var(--brdr);
 }
 
 .noselect {

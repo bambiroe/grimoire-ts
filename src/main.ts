@@ -2,6 +2,28 @@
 import { renderPlants } from "./utils/plants.js";
 import { renderSpells } from "./utils/spells.js";
 
+// ------ Dark/Light Mode ------
+const themeToggleButton = document.getElementById("themeToggle");
+
+themeToggleButton?.addEventListener("click", toggleTheme);
+
+function toggleTheme() {
+  // Check current theme and switch it
+  const currentTheme = document.body.getAttribute("data-theme");
+
+  if(themeToggleButton) {
+    if (currentTheme === "light") {
+      document.body.setAttribute("data-theme", "dark");
+      themeToggleButton.innerHTML = `<i class="fa-solid fa-moon"></i>`; // Moon icon for dark mode
+    } else {
+      document.body.setAttribute("data-theme", "light");
+      themeToggleButton.innerHTML = `<i class="fa-solid fa-sun"></i>`; // Sun icon for light mode
+    }
+  }
+}
+
+document.body.setAttribute("data-theme", "dark");
+
 // ------ Show/Hide Pages ------
 const pages = document.querySelectorAll<HTMLElement>(".page");
 const buttons = document.querySelectorAll<HTMLElement>("nav a");

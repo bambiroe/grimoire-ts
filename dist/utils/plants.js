@@ -1,10 +1,10 @@
 // src/utils/plants.ts
 import { plants } from "../data/plants.js";
 const elementIcons = {
-    Air: "🌪️",
-    Fire: "🔥",
-    Water: "🌊",
-    Earth: "🌱",
+    Air: '<i class="fa-solid fa-wind"></i>',
+    Fire: '<i class="fa-solid fa-fire"></i>',
+    Water: '<i class="fa-solid fa-droplet"></i>',
+    Earth: '<i class="fa-solid fa-seedling"></i>'
 };
 export function renderPlants(element) {
     const plantsSection = document.getElementById("plants");

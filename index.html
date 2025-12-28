@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grimoire.ts</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
+      <!--- Dark/Light Mode --->
+      <button id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
       <!--- Navigation Bar --->
       <h1>✦ Grimoire.ts ✦</h1>
       <p class="subtitle">
@@ -42,10 +47,10 @@
         <br />
         <div class="filters">
           <button data-element="All" class="filter active">All</button>
-          <button data-element="Air" class="filter">🌪️ Air</button>
-          <button data-element="Fire" class="filter">🔥 Fire</button>
-          <button data-element="Water" class="filter">🌊 Water</button>
-          <button data-element="Earth" class="filter">🌱 Earth</button>
+          <button data-element="Air" class="filter"><i class="fa-solid fa-wind"></i> Air</button>
+          <button data-element="Fire" class="filter"><i class="fa-solid fa-fire"></i> Fire</button>
+          <button data-element="Water" class="filter"><i class="fa-solid fa-droplet"></i> Water</button>
+          <button data-element="Earth" class="filter"><i class="fa-solid fa-seedling"></i> Earth</button>
         </div>
       </section>
       <!--- Spells Page --->
@@ -70,6 +75,7 @@
         </p>
         <br />
         <p>
+          <i class="fa-brands fa-github" style="font-size:1.5rem; padding-right: 0.5rem;"></i>
           Check the <strong>GitHub</strong> page <a href="https://github.com/bambiroe/grimoire-ts">here</a>. 
         </p>
       </section>

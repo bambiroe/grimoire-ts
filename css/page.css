@@ -15,7 +15,7 @@
   margin-bottom: 0;
   padding-top: 1.5rem;
   padding-bottom: 0;
-  border-top: 1px solid #2f3633;
+  border-top: 1px solid var(--brdr);
   border-bottom: none;
 }
 
@@ -45,8 +45,8 @@
 
 .filter {
   background: transparent;
-  border: 1px solid #2f3633;
-  color: #b8d8c0;
+  border: 1px solid var(--brdr);
+  color: var(--lnk);
   padding: 0.3rem 0.75rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.85rem;
@@ -55,12 +55,12 @@
 }
 
 .filter:hover {
-  background-color: #2f3633;
+  background-color: var(--brdr);
 }
 
 .filter.active {
-  background-color: #2f3633;
-  color: #e6e6e6;
+  background-color: var(--brdr);
+  color: var(--txt);
 }
 
 .search {
@@ -70,10 +70,15 @@
 #spellSearch {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #2f3633;
+  border: 1px solid var(--brdr);
   border-radius: 4px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.9rem;
-  background-color: #1b1f1c;
-  color: #e6e6e6;
+  font-size: 0.85rem;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+
+#spellSearch:active, #spellSearch:focus {
+  outline: none;
+  background: var(--brdr);
 }

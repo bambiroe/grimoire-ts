@@ -25,36 +25,44 @@ This project is designed to provide an **easy-to-use interface** for anyone who 
 
 ## 🔮 Future Ideas
 
-- Dark/Light themes
 - Expand the data
 - Custom animations
 - Seperate design for mobile
 
 ## Run the Project
 
-Open in GitHub Pages: [Grimoire.ts](https://bambiroe.github.io/grimoire-ts/)
+Open in **GitHub Pages**: [Grimoire.ts](https://bambiroe.github.io/grimoire-ts/)
 
-OR
+*OR*
 
-1. Clone the repo:
+**1.** Clone the repo:
+
 ```bash
 git clone https://github.com/bambiroe/grimoire-ts.git
 ```
-2. Navigate to the project directory:
+
+**2.** Navigate to the project directory:
+
 ```bash
 cd grimoire-ts
 ```
-3. Install dependencies (if you plan to run locally):
+
+**3.** Install dependencies (if you plan to run locally):
+
 ```bash
 npm install
 ```
-4. Run the app:
+
+**4.** Run the app:
+
 ```bash
 npx tsc && python3 -m http.server
 ```
-5. Open your browser and visit `http://localhost:8000` to view the app.
+
+**5.** Open your browser and visit `http://localhost:8000` to view the app.
 
 ## 🌿 Author
 
 Created by [*@bambiroe*](https://github.com/bambiroe).
-This project is licensed under the *MIT License* - see the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the *MIT License* - *see the [LICENSE](LICENSE) file for details*.

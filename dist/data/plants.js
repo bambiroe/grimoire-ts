@@ -23,7 +23,7 @@ export const plants = [
     {
         name: "Lavender",
         element: "Air",
-        uses: ["Calm", "Sleep", "Protection"],
+        uses: ["Calmness", "Sleep", "Protection"],
         notes: "Associated with relaxation and mental clarity. Commonly used to quiet the mind and support rest.",
         image: "assets/plants/lavender.png"
     },

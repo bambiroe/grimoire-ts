@@ -9,7 +9,7 @@ export interface Spell {
 export const spells: Spell[] = [
   {
     name: "Sleep Jar",
-    intent: "Rest and calm",
+    intent: "Rest and calmness",
     focus: "Evening reflection",
     notes:
       "A symbolic jar prepared with calming intentions, used as a reminder to slow down before rest.",

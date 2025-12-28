@@ -27,7 +27,15 @@ This project is designed to provide an **easy-to-use interface** for anyone who 
 
 - Expand the data
 - Custom animations
-- Seperate design for mobile
+- Separate design for mobile
+
+## 📜 What I Learned
+
+- Structuring a small frontend project with modular TypeScript
+- Managing and rendering structured data sets
+- Implementing search and filtering without a framework
+- Designing a calm, accessible UI with light and dark modes
+- Deploying and maintaining a project with GitHub Pages
 
 ## Run the Project
 

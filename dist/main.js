@@ -12,6 +12,13 @@ buttons.forEach((button) => {
         });
     });
 });
+// Elements
+const elementIcons = {
+    Air: "🌪️",
+    Fire: "🔥",
+    Water: "🌊",
+    Earth: "🌱"
+};
 // Import plants
 const plantsSection = document.getElementById("plants");
 if (plantsSection) {
@@ -27,7 +34,7 @@ if (plantsSection) {
       />
       <div class="card-content">
         <strong>${plant.name}</strong><br />
-        <em>Element:</em> ${plant.element}<br />
+        <em>Element:</em> ${elementIcons[plant.element]} ${plant.element}<br />
         <em>Uses:</em> ${plant.uses.join(", ")}<br />
         <span>${plant.notes}</span>
       </div>

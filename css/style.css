@@ -4,7 +4,7 @@
 
 :root, [data-theme='dark'] {
   --bg: #1b1f1c;
-  --bg2: #252e28;
+  --bg2: #1f2721;
   --brdr: #2f3633;
   --shdw: #2f36333d;
   --txt: #e6e6e6;
@@ -13,9 +13,9 @@
 }
 
 [data-theme='light'] {
-  --bg: #fcf5e5;
-  --bg2: #dbd5c5;
-  --brdr: #dfd5be;
+  --bg: #dfd6c0;
+  --bg2: #ebe4d4;
+  --brdr: #d4caae;
   --shdw: #dfd5be3d;
   --txt: #1b1f1c;
   --lnk: #2e8b57;
@@ -29,7 +29,7 @@
 }
 
 body {
-  /* background: radial-gradient(circle at center, var(--bg2), var(--bg)); */
+  /* background-image: linear-gradient(to right, var(--bg2), var(--bg)); */
   background-color: var(--bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--txt);

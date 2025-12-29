@@ -1,6 +1,6 @@
 # ✦ Grimoire.ts ✦
 
-A digital grimoire for plants, spells, and quiet study — built with TypeScript.
+A digital grimoire for plant and spell study, written in TypeScript.
 
 ![ScreenshotImage](assets/SiteScreen.png)
 

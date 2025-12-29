@@ -4,7 +4,9 @@
 
 :root, [data-theme='dark'] {
   --bg: #1b1f1c;
+  --bg2: #252e28;
   --brdr: #2f3633;
+  --shdw: #2f36333d;
   --txt: #e6e6e6;
   --lnk: #afe1af;
   --ttl2: #ebf5e4;
@@ -12,7 +14,9 @@
 
 [data-theme='light'] {
   --bg: #fcf5e5;
+  --bg2: #dbd5c5;
   --brdr: #dfd5be;
+  --shdw: #dfd5be3d;
   --txt: #1b1f1c;
   --lnk: #2e8b57;
   --ttl2: #587a5c;
@@ -25,8 +29,9 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* background: radial-gradient(circle at center, var(--bg2), var(--bg)); */
   background-color: var(--bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--txt);
   line-height: 1.6;
   font-size: 0.95rem;
@@ -125,9 +130,9 @@ footer p {
   min-width: 125px;
   border-radius: 5px;
   border: 1px solid var(--brdr);
-  box-shadow: 0 0 5px rgba(0,0,0,0.25);
   background: var(--bg);
   color: var(--txt);
+  box-shadow: 0 0 5px var(--shdw);
 }
 
 ul {

@@ -11,6 +11,11 @@
   color: var(--lnk);
 }
 
+.subsection {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--brdr);
+}
+
 .card {
   display: flex;
   gap: 1rem;
@@ -29,10 +34,6 @@
   object-fit: fill;
   border-radius: 5px;
   flex-shrink: 0;
-}
-
-.card-content {
-  font-size: 0.95rem;
 }
 
 .card-content strong {

@@ -13,7 +13,6 @@ export function renderPlants(element: string) {
   if (!plantsSection) return;
 
   let plantsList = plantsSection.querySelector("ul");
-
   if (!plantsList) {
     plantsList = document.createElement("ul");
     plantsSection.appendChild(plantsList);
@@ -21,33 +20,30 @@ export function renderPlants(element: string) {
 
   plantsList.innerHTML = "";
 
-  const sortedPlants = [...plants].sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  const fragment = document.createDocumentFragment();
 
-  const filteredPlants =
-    element === "All"
-      ? sortedPlants
-      : sortedPlants.filter((plant) => plant.element === element);
+  const processedPlants = [...plants]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((plant) => element === "All" || plant.element === element);
 
-  filteredPlants.forEach((plant) => {
+  processedPlants.forEach((plant) => {
     const item = document.createElement("li");
     item.classList.add("card");
 
+    const icon = elementIcons[plant.element] || '✦';
+
     item.innerHTML = `
-      <img
-        src="${plant.image}"
-        alt="${plant.name}"
-        class="card-image"
-      />
+      <img src="${plant.image}" alt="${plant.name}" class="card-image" loading="lazy" />
       <div class="card-content">
         <strong>${plant.name}</strong><br />
-        <em>Element:</em> ${elementIcons[plant.element]} ${plant.element}<br />
+        <em>Element:</em> ${icon} ${plant.element}<br />
         <em>Uses:</em> ${plant.uses.join(", ")}<br />
         <span>${plant.notes}</span>
       </div>
     `;
 
-    plantsList!.appendChild(item);
+    fragment.appendChild(item);
   });
+
+  plantsList.appendChild(fragment);
 }

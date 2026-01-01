@@ -8,7 +8,7 @@
 }
 
 .bullet {
-  color: var(--lnk);
+  color: var(--accnt);
 }
 
 .subsection {
@@ -16,57 +16,84 @@
   border-bottom: 1px solid var(--brdr);
 }
 
+/* ------ Cards ------ */
+
+li {
+  list-style: none;
+}
+
 .card {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: flex-start;
   margin-top: 1.5rem;
   margin-bottom: 0;
-  padding-top: 1.5rem;
-  padding-bottom: 0;
-  border-top: 1px solid var(--brdr);
-  border-bottom: none;
+  padding: 1.5rem;
+  border: 1px solid var(--brdr);
+  background-color: var(--bg2);
 }
 
 .card-image {
   width: 20%;
   min-width: 100px;
-  object-fit: fill;
-  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid var(--brdr);
+  padding: 4px;
+  background: var(--bg);
   flex-shrink: 0;
 }
 
 .card-content strong {
   font-family: "Libre Baskerville", serif;
-  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--lnk);
 }
+
+.card-content em {
+  color: var(--accnt);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ------ Plants ------ */
 
 .filters {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .filter {
-  background: transparent;
+  background: var(--bg);
   border: 1px solid var(--brdr);
-  color: var(--lnk);
-  padding: 0.3rem 0.75rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--txt);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
   font-size: 0.85rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0;
+  outline: 2px solid transparent;
 }
 
 .filter:hover {
-  background-color: var(--brdr);
+  background-color: var(--bg2);
+  border-color: var(--lnk);
 }
 
 .filter.active {
-  background-color: var(--brdr);
-  color: var(--txt);
+  background-color: var(--lnk);
+  color: var(--bg);
+  border-color: var(--lnk);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--lnk);
 }
+
+/* ------ Spells ------ */
 
 .search {
   margin-bottom: 2rem;
@@ -74,16 +101,23 @@
 
 #spellSearch {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--brdr);
-  border-radius: 5px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.85rem;
-  background-color: var(--bg);
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: var(--bg2);
   color: var(--txt);
 }
 
-#spellSearch:active, #spellSearch:focus {
+#spellSearch:focus {
   outline: none;
-  background: var(--brdr);
+  border-color: var(--accnt);
+  background: var(--bg);
+  box-shadow: inset 0 0 5px var(--shdw);
+}
+
+#spellSearch::placeholder {
+  font-style: italic;
+  opacity: 0.5;
 }

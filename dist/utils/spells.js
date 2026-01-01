@@ -10,13 +10,15 @@ export function renderSpells(query) {
         spellsSection.appendChild(spellsList);
     }
     spellsList.innerHTML = "";
-    const sortedSpells = [...spells].sort((a, b) => a.name.localeCompare(b.name));
-    const filteredSpells = sortedSpells.filter((spell) => spell.name.toLowerCase().includes(query));
+    const fragment = document.createDocumentFragment();
+    const filteredSpells = spells
+        .filter((spell) => spell.name.toLowerCase().includes(query))
+        .sort((a, b) => a.name.localeCompare(b.name));
     filteredSpells.forEach((spell) => {
         const item = document.createElement("li");
         item.classList.add("card");
         item.innerHTML = `
-      <img src="${spell.image}" alt="${spell.name}" class="card-image" />
+      <img src="${spell.image}" alt="${spell.name}" class="card-image" loading="lazy" />
       <div class="card-content">
         <strong>${spell.name}</strong><br />
         <em>Intent:</em> ${spell.intent}<br />
@@ -24,6 +26,7 @@ export function renderSpells(query) {
         <span>${spell.notes}</span>
       </div>
     `;
-        spellsList.appendChild(item);
+        fragment.appendChild(item);
     });
+    spellsList.appendChild(fragment);
 }

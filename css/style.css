@@ -1,35 +1,37 @@
 /* css/style.css */
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("font.css");
 @import url("page.css");
 
 :root, [data-theme='dark'] {
-  --bg: #1b1f1c;
-  --bg2: #1f2721;
-  --brdr: #2f3633;
-  --shdw: #2f36333d;
-  --txt: #e6e6e6;
-  --lnk: #afe1af;
+  --bg: #2a2b2e;
+  --bg2: #35363a;
+  --brdr: #5a5b5e;      
+  --shdw: #0000003d;
+  --txt: #d1d1d1;
+  --lnk: #8ba88e; 
   --ttl2: #ebf5e4;
+  --accnt: #a393bf;
 }
 
 [data-theme='light'] {
-  --bg: #dfd6c0;
-  --bg2: #ebe4d4;
-  --brdr: #d4caae;
+  --bg: #f4f1e6;
+  --bg2: #ece8d9;
+  --brdr: #b8b1a2;
   --shdw: #dfd5be3d;
-  --txt: #1b1f1c;
-  --lnk: #2e8b57;
+  --txt: #424b43;
+  --lnk: #587a5c;
   --ttl2: #587a5c;
+  --accnt: #7e69a1;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
-  /* background-image: linear-gradient(to right, var(--bg2), var(--bg)); */
   background-color: var(--bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--txt);
@@ -37,9 +39,11 @@ body {
   font-size: 0.95rem;
 }
 
+/* ------ Header ------ */
+
 header {
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 3rem 1rem;
   border-bottom: 1px solid var(--brdr);
 }
 
@@ -47,7 +51,6 @@ header {
   background: transparent;
   border: none;
   cursor: pointer;
-  text-decoration: none;
   font-size: 2rem;
   color: var(--txt);
 }
@@ -59,15 +62,28 @@ header {
 .subtitle {
   margin-top: 0.5rem;
   opacity: 0.8;
+  font-style: italic;
 }
 
 nav {
   margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 nav a {
-  margin: 0 0.75rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--txt);
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: var(--lnk);
+  text-decoration: none;
 }
 
 a {
@@ -75,15 +91,16 @@ a {
   color: var(--lnk);
 }
 
-a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+/* ------ Main ------ */
 
 main {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2.5rem 1rem;
+  max-width: 750px;
+  margin: 3rem 3rem;
+  padding: 3rem;
+  background: transparent;
+  border: 1px solid var(--brdr);
+  outline: 6px solid var(--bg);
+  box-shadow: 0 0 0 7px var(--brdr);
 }
 
 section {
@@ -92,6 +109,7 @@ section {
 
 #titleBig {
   display: none;
+  font-size: 2.5rem;
 }
 
 #titleSmall {
@@ -103,68 +121,62 @@ h1, h2 {
 }
 
 h2 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   letter-spacing: 0.03em;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--ttl2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-footer {
-  text-align: center;
-  padding: 1.5rem;
+h2::before {
+  content: "✦";
+  color: var(--accnt);
   font-size: 0.9rem;
 }
 
-footer p {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 50%;
-  transform: translateX(50%);
+/* ------ Footer ------ */
 
-  display: flex;
+footer {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  font-size: 0.8rem;
+  font-family: "Libre Baskerville", serif;
+  text-transform: lowercase;
+}
+
+footer p {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+}
 
-  padding: 0.5rem;
-  width: auto;
-  min-width: 125px;
-  border-radius: 5px;
-  border: 1px solid var(--brdr);
-  background: var(--bg);
+footer p a {
   color: var(--txt);
-  box-shadow: 0 0 5px var(--shdw);
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
+footer p:hover a {
+  color: var(--lnk);
 }
 
-li {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--brdr);
-}
-
-img {
-  pointer-events: none;
-}
+/* ------ Other ------ */
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Chrome, Edge, Opera and Firefox */
+  user-select: none;
 }
 
-/* Screen size adjustments */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
+  main {
+    margin: 3rem auto;
+  }
+
   #themeToggle {
     position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 2rem;
+    right: 2rem;
     font-size: 1.25rem !important;
   }
 
@@ -174,10 +186,5 @@ img {
 
   #titleSmall {
     display: none !important;
-  }
-
-  footer p {
-    right: 1.5rem !important;
-    transform: translateX(0) !important;
   }
 }

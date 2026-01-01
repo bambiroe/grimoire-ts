@@ -1,0 +1,33 @@
+/* css/font.css */
+
+/* Regular */
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('../assets/fonts/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('../assets/fonts/LibreBaskerville-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('../assets/fonts/LibreBaskerville-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('../assets/fonts/LibreBaskerville-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

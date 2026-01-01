@@ -1,30 +1,32 @@
 // src/main.ts
 import { renderPlants } from "./utils/plants.js";
 import { renderSpells } from "./utils/spells.js";
+// ------ Initialization ------
+function init() {
+    document.body.setAttribute("data-theme", "dark");
+    renderPlants("All");
+    renderSpells("");
+}
 // ------ Dark/Light Mode ------
 const themeToggleButton = document.getElementById("themeToggle");
-themeToggleButton?.addEventListener("click", toggleTheme);
-function toggleTheme() {
-    // Check current theme and switch it
+themeToggleButton?.addEventListener("click", () => {
     const currentTheme = document.body.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    document.body.setAttribute("data-theme", newTheme);
     if (themeToggleButton) {
-        if (currentTheme === "light") {
-            document.body.setAttribute("data-theme", "dark");
-            themeToggleButton.innerHTML = `<i class="fa-solid fa-moon"></i>`; // Moon icon for dark mode
-        }
-        else {
-            document.body.setAttribute("data-theme", "light");
-            themeToggleButton.innerHTML = `<i class="fa-solid fa-sun"></i>`; // Sun icon for light mode
-        }
+        themeToggleButton.innerHTML = newTheme === "dark"
+            ? `<i class="fa-solid fa-moon"></i>`
+            : `<i class="fa-solid fa-sun"></i>`;
     }
-}
-document.body.setAttribute("data-theme", "dark");
-// ------ Show/Hide Pages ------
+});
+// ------ Navigation ------
 const pages = document.querySelectorAll(".page");
-const buttons = document.querySelectorAll("nav a");
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const targetId = button.dataset.target;
+const navLinks = document.querySelectorAll("nav a");
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        const targetId = link.dataset.target;
+        if (!targetId)
+            return;
         pages.forEach((page) => {
             page.classList.toggle("active", page.id === targetId);
         });
@@ -39,11 +41,10 @@ filterButtons.forEach((button) => {
         renderPlants(element);
     });
 });
-renderPlants("All");
 // ------ Spell Search ------
 const spellSearchInput = document.getElementById("spellSearch");
-spellSearchInput.addEventListener("input", (e) => {
+spellSearchInput?.addEventListener("input", (e) => {
     const query = e.target.value.toLowerCase();
     renderSpells(query);
 });
-renderSpells("");
+init();

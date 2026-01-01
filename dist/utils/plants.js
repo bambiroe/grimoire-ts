@@ -16,26 +16,24 @@ export function renderPlants(element) {
         plantsSection.appendChild(plantsList);
     }
     plantsList.innerHTML = "";
-    const sortedPlants = [...plants].sort((a, b) => a.name.localeCompare(b.name));
-    const filteredPlants = element === "All"
-        ? sortedPlants
-        : sortedPlants.filter((plant) => plant.element === element);
-    filteredPlants.forEach((plant) => {
+    const fragment = document.createDocumentFragment();
+    const processedPlants = [...plants]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .filter((plant) => element === "All" || plant.element === element);
+    processedPlants.forEach((plant) => {
         const item = document.createElement("li");
         item.classList.add("card");
+        const icon = elementIcons[plant.element] || '✦';
         item.innerHTML = `
-      <img
-        src="${plant.image}"
-        alt="${plant.name}"
-        class="card-image"
-      />
+      <img src="${plant.image}" alt="${plant.name}" class="card-image" loading="lazy" />
       <div class="card-content">
         <strong>${plant.name}</strong><br />
-        <em>Element:</em> ${elementIcons[plant.element]} ${plant.element}<br />
+        <em>Element:</em> ${icon} ${plant.element}<br />
         <em>Uses:</em> ${plant.uses.join(", ")}<br />
         <span>${plant.notes}</span>
       </div>
     `;
-        plantsList.appendChild(item);
+        fragment.appendChild(item);
     });
+    plantsList.appendChild(fragment);
 }

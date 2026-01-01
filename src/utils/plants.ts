@@ -33,7 +33,7 @@ export function renderPlants(element: string) {
     const icon = elementIcons[plant.element] || '✦';
 
     item.innerHTML = `
-      <img src="${plant.image}" alt="${plant.name}" class="card-image" loading="lazy" />
+      <img src="${plant.image}" alt="${plant.name}" class="card-image" />
       <div class="card-content">
         <strong>${plant.name}</strong><br />
         <em>Element:</em> ${icon} ${plant.element}<br />

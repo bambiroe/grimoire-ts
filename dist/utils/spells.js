@@ -18,7 +18,7 @@ export function renderSpells(query) {
         const item = document.createElement("li");
         item.classList.add("card");
         item.innerHTML = `
-      <img src="${spell.image}" alt="${spell.name}" class="card-image" loading="lazy" />
+      <img src="${spell.image}" alt="${spell.name}" class="card-image" />
       <div class="card-content">
         <strong>${spell.name}</strong><br />
         <em>Intent:</em> ${spell.intent}<br />

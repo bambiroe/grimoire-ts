@@ -50,5 +50,3 @@ npx tsc && python3 -m http.server
 ## 🌿 Author
 
 Created by [@bambiroe](https://github.com/bambiroe).
-
-This project is licensed under the MIT License - *see the [LICENSE](LICENSE) file for details*.
